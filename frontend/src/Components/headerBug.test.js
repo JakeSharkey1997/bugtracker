@@ -2,9 +2,7 @@ import React from 'react';
 import { render, unmountComponentAtNode } from 'react-dom';
 import { act } from "react-dom/test-utils";
 
-import App from "./App";
-
-
+import HeaderBug from "./headerBug";
 
 let container = null;
 beforeEach(() => {
@@ -18,9 +16,9 @@ afterEach(() => {
   container = null;
 });
 
-it("Everything renders", () => {
+test ('Header loads', () => {
   act(() => {
-    render(<App />, container);
+    render(<HeaderBug />, container);
   });
-  expect(container.textContent).toNotBeNull;
-});
+  expect(container.textContent).toBe("Bug Tracker");
+})
