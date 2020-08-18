@@ -1,2 +1,2 @@
-FLASK_APP=bugTracker
+FLASK_APP=bugtracker
 FLASK_ENV=development
