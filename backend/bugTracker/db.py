@@ -36,3 +36,11 @@ def init_db_command():
 def init_app(app):
     app.teardown_appcontext(close_db)
     app.cli.add_command(init_db_command)
+
+
+def add_item(key, bug):
+    db = get_db()
+    cursor = db.cursor()
+    items = (key, bug)
+    cursor.execute('INSERT INTO list VALUES (?,?)', items)
+    db.commit()
