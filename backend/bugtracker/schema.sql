@@ -2,5 +2,5 @@ DROP TABLE IF EXISTS bugs;
 
 CREATE TABLE bugs (
     id TEXT UNIQUE NOT NULL,
-    bug TEXT NOT NULL
+    title TEXT NOT NULL
 );

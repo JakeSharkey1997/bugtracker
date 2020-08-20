@@ -54,7 +54,7 @@ def get_all_bugs():
     for row in rows:
         result = {
             'id': row['id'],
-            'bug': row['bug']
+            'title': row['title']
         }
         results.append(result)
     return results

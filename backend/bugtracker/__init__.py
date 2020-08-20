@@ -24,7 +24,7 @@ def create_app():
     @app.route('/add', methods=['POST'])
     def add_item():
         key = str(uuid.uuid4())
-        bug = request.json['bug']
+        bug = request.json['title']
         db.add_bug(key, bug)
         return 'Added bug'
 
