@@ -38,9 +38,23 @@ def init_app(app):
     app.cli.add_command(init_db_command)
 
 
-def add_item(key, bug):
+def add_bug(key, bug):
     db = get_db()
     cursor = db.cursor()
     items = (key, bug)
     cursor.execute('INSERT INTO bugs VALUES (?,?)', items)
     db.commit()
+
+
+def get_all_bugs():
+    cursor = get_db().cursor()
+    cursor.execute('SELECT * FROM bugs')
+    rows = cursor.fetchall()
+    results = []
+    for row in rows:
+        result = {
+            'id': row['id'],
+            'bug': row['bug']
+        }
+        results.append(result)
+    return results

@@ -38,3 +38,23 @@ def test_add(client):
 
     assert response.status_code == 200
     assert response.data == b'Added bug'
+
+
+def test_get_all(client):
+    client.post(
+        '/add',
+        data=json.dumps({'bug': 'test-get'}),
+        content_type='application/json'
+    )
+    client.post(
+        '/add',
+        data=json.dumps({'bug': 'test-get-2'}),
+        content_type='application/json'
+    )
+
+    response = client.get('/get-all')
+    string = response.data.decode('utf-8')
+    converted = json.loads(string)
+    assert len(converted['return']) == 2
+    assert converted['return'][0]['bug'] == "test-get"
+    assert converted['return'][1]['bug'] == "test-get-2"

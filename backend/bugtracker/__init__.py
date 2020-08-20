@@ -25,7 +25,11 @@ def create_app():
     def add_item():
         key = str(uuid.uuid4())
         bug = request.json['bug']
-        db.add_item(key, bug)
+        db.add_bug(key, bug)
         return 'Added bug'
+
+    @app.route('/get-all', methods=['GET'])
+    def get_all():
+        return {'return': db.get_all_bugs()}
 
     return app
