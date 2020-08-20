@@ -36,6 +36,5 @@ def test_add(client):
         content_type='application/json'
     )
 
-    data = json.loads(response.get_data(as_text=True))
     assert response.status_code == 200
-    assert data == b'Added bug'
+    assert response.data == b'Added bug'

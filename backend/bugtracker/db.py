@@ -42,5 +42,5 @@ def add_item(key, bug):
     db = get_db()
     cursor = db.cursor()
     items = (key, bug)
-    cursor.execute('INSERT INTO list VALUES (?,?)', items)
+    cursor.execute('INSERT INTO bugs VALUES (?,?)', items)
     db.commit()

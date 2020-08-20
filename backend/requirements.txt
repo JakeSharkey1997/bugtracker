@@ -1,10 +1,12 @@
+alchemy==20.5
 atomicwrites==1.4.0
 attrs==19.3.0
--e git+https://github.com/JakeSharkey1997/bugtracker.git@75bd3fe89c647da878541b75d9f695b0b3bd0023#egg=bugtracker&subdirectory=backend
+-e git+https://github.com/JakeSharkey1997/bugtracker.git@2064398a067c39145f619946bc56076f970f5ce2#egg=bugtracker&subdirectory=backend
 certifi==2020.6.20
 chardet==3.0.4
 click==7.1.2
 colorama==0.4.3
+coverage==4.5.3
 docutils==0.16
 filelock==3.0.12
 Flask==1.1.2
@@ -21,6 +23,7 @@ pluggy==0.13.1
 py==1.9.0
 pyparsing==2.4.7
 pytest==6.0.1
+pytest-cov==2.10.1
 python-daemon==2.2.4
 python-dotenv==0.14.0
 requests==2.22.0
